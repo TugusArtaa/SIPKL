@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DosenController;
@@ -8,7 +9,7 @@ use App\Http\Controllers\MahasiswaController;
 
 // Halaman awal
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/register');
 });
 
 // Dashboard utama setelah login (tidak digunakan karena kita pakai redirect)
@@ -28,7 +29,7 @@ require __DIR__ . '/auth.php';
 
 // Redirect setelah login berdasarkan role
 Route::get('/redirect', function () {
-    $role = auth()->user()->role;
+    $role = Auth::user()->role;
 
     return match ($role) {
         'admin' => redirect()->route('admin.dashboard'),
