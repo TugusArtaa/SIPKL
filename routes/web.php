@@ -6,6 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Dosen\DashboardController as DosenDashboardController;
 use App\Http\Controllers\Mahasiswa\DashboardController as MahasiswaDashboardController;
+use App\Http\Controllers\Admin\ImportMahasiswaController;
+use App\Http\Controllers\Admin\ImportDosenController;
 
 // Halaman awal
 Route::get('/', function () {
@@ -42,6 +44,10 @@ Route::get('/redirect', function () {
 // Admin
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/mahasiswa/import', [ImportMahasiswaController::class, 'create'])->name('mahasiswa.import.form');
+    Route::post('/mahasiswa/import', [ImportMahasiswaController::class, 'store'])->name('mahasiswa.import');
+    Route::get('/dosen/import', [ImportDosenController::class, 'create'])->name('dosen.import.form');
+    Route::post('/dosen/import', [ImportDosenController::class, 'store'])->name('dosen.import');
 });
 
 // Dosen
