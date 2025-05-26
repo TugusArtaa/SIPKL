@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\ImportDosenController;
 
 // Halaman awal
 Route::get('/', function () {
-    return redirect('/register');
+    return redirect('/login');
 });
 
 // Dashboard utama setelah login (tidak digunakan karena kita pakai redirect)

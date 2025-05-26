@@ -1,10 +1,17 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Dashboard Mahasiswa
+        </h2>
+    </x-slot>
 
-@section('content')
-<div class="container">
-    <h1 class="mb-4">Dashboard Mahasiswa</h1>
-    <div class="alert alert-primary">
-        Halo, {{ auth()->user()->name }}! Anda login sebagai <strong>Mahasiswa</strong>.
+    <div class="py-6">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    Halo, <strong>{{ auth()->user()->name }}</strong>! Anda login sebagai <strong>Mahasiswa</strong>.
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-@endsection
+</x-app-layout>
