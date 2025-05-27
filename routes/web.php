@@ -17,7 +17,7 @@ Route::get('/', function () {
 // Dashboard utama setelah login (tidak digunakan karena kita pakai redirect)
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 // Group route untuk profile
 Route::middleware('auth')->group(function () {
