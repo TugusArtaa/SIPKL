@@ -31,7 +31,7 @@
                     </svg>
                 </div>
                 <x-text-input id="login"
-                    class="block mt-1 w-full pl-10 pr-3 py-3 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-blue-500"
+                    class="block mt-1 w-full pl-10 pr-3 py-3 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-blue-500 text-gray-900"
                     type="text" name="login" :value="old('login')" required autofocus autocomplete="username"
                     placeholder="Masukkan email, NIM, atau NIP" />
             </div>
@@ -50,7 +50,7 @@
                     </svg>
                 </div>
                 <x-text-input id="password"
-                    class="block mt-1 w-full pl-10 pr-10 py-3 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-blue-500"
+                    class="block mt-1 w-full pl-10 pr-10 py-3 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-blue-500 text-gray-900"
                     type="password" name="password" required autocomplete="current-password"
                     placeholder="Masukkan password" />
                 <button type="button" onclick="togglePassword()"

@@ -27,7 +27,7 @@
         <div>
             <x-input-label for="email" :value="__('Email')" class="text-sm font-medium text-white mb-2" />
             <x-text-input id="email"
-                class="block mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                class="block mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-gray-900"
                 type="email" name="email" :value="old('email')" required autofocus placeholder="Masukkan email Anda" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
