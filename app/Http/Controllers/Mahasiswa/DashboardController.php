@@ -11,4 +11,24 @@ class DashboardController extends Controller
     {
         return view('mahasiswa.dashboard');
     }
+    public function pendaftaran()
+    {
+        return view('mahasiswa.pendaftaran');
+    }
+
+    public function perusahaan()
+    {
+        return view('mahasiswa.perusahaan');
+    }
+
+    public function laporan()
+    {
+        return view('mahasiswa.laporan');
+    }
+
+    public function bimbingan()
+    {
+        return view('mahasiswa.bimbingan');
+    }
+
 }

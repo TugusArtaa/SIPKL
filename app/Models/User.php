@@ -56,4 +56,19 @@ class User extends Authenticatable
         return $this->hasOne(Dosen::class);
     }
 
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isDosen()
+    {
+        return $this->role === 'dosen';
+    }
+
+    public function isMahasiswa()
+    {
+        return $this->role === 'mahasiswa';
+    }
+
 }

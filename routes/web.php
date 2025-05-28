@@ -58,4 +58,8 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->grou
 // Mahasiswa
 Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->name('mahasiswa.')->group(function () {
     Route::get('/dashboard', [MahasiswaDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/pendaftaran', [MahasiswaDashboardController::class, 'pendaftaran'])->name('pendaftaran');
+    Route::get('/perusahaan', [MahasiswaDashboardController::class, 'perusahaan'])->name('perusahaan');
+    Route::get('/laporan', [MahasiswaDashboardController::class, 'laporan'])->name('laporan');
+    Route::get('/bimbingan', [MahasiswaDashboardController::class, 'bimbingan'])->name('bimbingan');
 });

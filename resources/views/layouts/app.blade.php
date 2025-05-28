@@ -1,39 +1,47 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'SIPTI - Sistem Informasi PKL TI') }}</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
+    <meta charset="UTF-8">
+    <title>SIPTI</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen">
+    <x-navbar />
 
-        <!-- Page Heading -->
-        @isset($header)
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
+    <div class="flex min-h-screen pt-16">
+        <div class="w-72 fixed left-0 top-16 h-full backdrop-blur-xl bg-white/5 border-r border-white/10 shadow-2xl z-40"
+            x-data="{ collapsed: false }">
+
+            <!-- Sidebar Content -->
+            <div class="p-4" :class="collapsed ? 'px-2' : 'px-4'">
+                @if(Auth::user()->role === 'mahasiswa')
+                    <x-sidebar-mahasiswa :collapsed="false" />
+                @elseif(Auth::user()->role === 'dosen')
+                    <x-sidebar-dosen :collapsed="false" />
+                @elseif(Auth::user()->role === 'admin')
+                    <x-sidebar-admin :collapsed="false" />
+                @endif
             </div>
-        </header>
-        @endisset
+        </div>
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
+        <!-- Main Content Area -->
+        <main class="flex-1 ml-72 p-6 transition-all duration-300">
+            <div
+                class="mt-4 backdrop-blur-xl bg-white/5 rounded-xl border border-white/10 shadow-2xl min-h-[calc(100vh-8rem)]">
+                {{ $slot }}
+            </div>
         </main>
     </div>
+    @stack('modals')
 </body>
 
 </html>
