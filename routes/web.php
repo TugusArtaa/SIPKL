@@ -53,6 +53,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 // Dosen
 Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->group(function () {
     Route::get('/dashboard', [DosenDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/mahasiswa-bimbingan', [DosenDashboardController::class, 'mahasiswa'])->name('mahasiswa');
+    Route::get('/jadwal-bimbingan', [DosenDashboardController::class, 'bimbingan'])->name('bimbingan');
+    Route::get('/input-nilai', [DosenDashboardController::class, 'nilai'])->name('nilai');
 });
 
 // Mahasiswa
