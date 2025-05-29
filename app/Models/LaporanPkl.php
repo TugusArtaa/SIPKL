@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LaporanPkl extends Model
 {
-    protected $table = 'laporanpkl';
+    protected $table = 'laporan_pkl';
 
     protected $fillable = ['mahasiswa_id', 'perusahaan_id', 'file', 'status'];
 

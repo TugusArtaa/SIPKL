@@ -10,11 +10,11 @@
 
     <!-- Section Divider -->
     @if(!$collapsed)
-        <div class="px-3 py-2 mt-6 mb-2">
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Manajemen PKL</p>
-        </div>
+    <div class="px-3 py-2 mt-6 mb-2">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Manajemen PKL</p>
+    </div>
     @else
-        <div class="h-px bg-white/10 my-4"></div>
+    <div class="h-px bg-white/10 my-4"></div>
     @endif
 
     <!-- Pendaftaran PKL -->
@@ -29,17 +29,23 @@
 
     <!-- Section Divider -->
     @if(!$collapsed)
-        <div class="px-3 py-2 mt-6 mb-2">
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Laporan & Bimbingan</p>
-        </div>
+    <div class="px-3 py-2 mt-6 mb-2">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Laporan & Bimbingan</p>
+    </div>
     @else
-        <div class="h-px bg-white/10 my-4"></div>
+    <div class="h-px bg-white/10 my-4"></div>
     @endif
 
     <!-- Laporan PKL -->
     <x-sidebar-link route="mahasiswa.laporan" label="Laporan PKL" :collapsed="$collapsed" icon='<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>' />
+
+    <!-- Download Format -->
+    <x-sidebar-link route="mahasiswa.format" label="Download Format Laporan" :collapsed="$collapsed" icon='<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>' />
+
 
     <!-- Bimbingan -->
     <x-sidebar-link route="mahasiswa.bimbingan" label="Bimbingan" :collapsed="$collapsed" icon='<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,11 +54,11 @@
 
     <!-- Section Divider -->
     @if(!$collapsed)
-        <div class="px-3 py-2 mt-6 mb-2">
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Profil</p>
-        </div>
+    <div class="px-3 py-2 mt-6 mb-2">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Profil</p>
+    </div>
     @else
-        <div class="h-px bg-white/10 my-4"></div>
+    <div class="h-px bg-white/10 my-4"></div>
     @endif
 
     <!-- Profil -->
