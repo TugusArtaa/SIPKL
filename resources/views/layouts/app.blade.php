@@ -8,9 +8,9 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+    }
     </style>
 </head>
 
@@ -24,11 +24,11 @@
             <!-- Sidebar Content -->
             <div class="p-4" :class="collapsed ? 'px-2' : 'px-4'">
                 @if(Auth::user()->role === 'mahasiswa')
-                    <x-sidebar-mahasiswa :collapsed="false" />
+                <x-sidebar-mahasiswa :collapsed="false" />
                 @elseif(Auth::user()->role === 'dosen')
-                    <x-sidebar-dosen :collapsed="false" />
+                <x-sidebar-dosen :collapsed="false" />
                 @elseif(Auth::user()->role === 'admin')
-                    <x-sidebar-admin :collapsed="false" />
+                <x-sidebar-admin :collapsed="false" />
                 @endif
             </div>
         </div>
@@ -36,7 +36,7 @@
         <!-- Main Content Area -->
         <main class="flex-1 ml-72 p-6 transition-all duration-300">
             <div
-                class="mt-4 backdrop-blur-xl bg-white/5 rounded-xl border border-white/10 shadow-2xl min-h-[calc(100vh-8rem)]">
+                class="mt-4 backdrop-blur-xl bg-white/5 rounded-xl border border-white/10 shadow-2xl min-h-[calc(100vh-8rem)] p-8">
                 {{ $slot }}
             </div>
         </main>

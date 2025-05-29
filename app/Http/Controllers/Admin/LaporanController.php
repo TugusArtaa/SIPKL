@@ -13,7 +13,7 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        $laporan = LaporanPkl::with(['mahasiswa.user'])->latest()->get();
+        $laporan = LaporanPkl::with(['mahasiswa.user'])->latest()->paginate(8);
 
         return view('admin.laporan.index', compact('laporan'));
     }
@@ -25,12 +25,10 @@ class LaporanController extends Controller
     {
         $request->validate([
             'status' => 'required|in:diterima,ditolak',
-            'catatan' => 'nullable|string|max:1000',
         ]);
 
         $laporan = LaporanPkl::findOrFail($id);
         $laporan->status = $request->status;
-        $laporan->catatan = $request->catatan;
         $laporan->save();
 
         return redirect()->route('admin.laporan.verifikasi')->with('success', 'Laporan berhasil diverifikasi.');

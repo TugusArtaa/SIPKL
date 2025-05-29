@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\ImportDosenController;
 use App\Http\Controllers\Admin\AdminMahasiswaController;
 use App\Http\Controllers\Admin\AdminDosenController;
 use App\Http\Controllers\Admin\PerusahaanController;
-use App\Http\Controllers\Admin\LaporanController;
+use App\Http\Controllers\Admin\LaporanController as DosenLaporanController;
 use App\Http\Controllers\Admin\FormatLaporanController;
 
 // Dosen
@@ -19,6 +19,7 @@ use App\Http\Controllers\Dosen\DashboardController as DosenDashboardController;
 
 // Mahasiswa
 use App\Http\Controllers\Mahasiswa\DashboardController as MahasiswaDashboardController;
+use App\Http\Controllers\Mahasiswa\LaporanController as MahasiswaLaporanController;
 
 // =======================
 // Halaman awal
@@ -61,6 +62,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('/mahasiswa', [AdminMahasiswaController::class, 'store'])->name('mahasiswa.store');
     Route::get('/mahasiswa/import', [ImportMahasiswaController::class, 'create'])->name('mahasiswa.import.form');
     Route::post('/mahasiswa/import', [ImportMahasiswaController::class, 'store'])->name('mahasiswa.import');
+    Route::delete('/mahasiswa/{id}', [AdminMahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 
     // Dosen (tambah manual & import)
     Route::get('/dosen', [AdminDosenController::class, 'index'])->name('dosen.index');
@@ -73,8 +75,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::resource('perusahaan', PerusahaanController::class);
 
     // Verifikasi Laporan PKL
-    Route::get('/laporan/verifikasi', [LaporanController::class, 'index'])->name('laporan.verifikasi');
-    Route::post('/laporan/verifikasi/{id}', [LaporanController::class, 'verifikasi'])->name('laporan.verifikasi.process');
+    Route::get('/laporan/verifikasi', [DosenLaporanController::class, 'index'])->name('laporan.verifikasi');
+    Route::post('/laporan/verifikasi/{id}', [DosenLaporanController::class, 'verifikasi'])->name('laporan.verifikasi.process');
 
     // Upload Format Laporan
     Route::get('/format-laporan', [FormatLaporanController::class, 'index'])->name('format.index');
@@ -99,7 +101,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->name('mahasi
     Route::get('/dashboard', [MahasiswaDashboardController::class, 'index'])->name('dashboard');
     Route::get('/pendaftaran', [MahasiswaDashboardController::class, 'pendaftaran'])->name('pendaftaran');
     Route::get('/perusahaan', [MahasiswaDashboardController::class, 'perusahaan'])->name('perusahaan');
-    Route::get('/laporan', [MahasiswaDashboardController::class, 'laporan'])->name('laporan');
+    Route::get('/laporan', [MahasiswaLaporanController::class, 'index'])->name('laporan');
+    Route::post('/laporan/upload', [MahasiswaLaporanController::class, 'upload'])->name('laporan.upload');
     Route::get('/bimbingan', [MahasiswaDashboardController::class, 'bimbingan'])->name('bimbingan');
     Route::get('/format-laporan', function () {
         $format = \App\Models\FormatLaporan::latest()->get();
