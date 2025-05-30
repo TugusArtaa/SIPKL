@@ -10,7 +10,7 @@ class PerusahaanController extends Controller
 {
     public function index()
     {
-        $perusahaan = Perusahaan::latest()->get();
+        $perusahaan = Perusahaan::latest()->paginate(8);
         return view('admin.perusahaan.index', compact('perusahaan'));
     }
 

@@ -12,7 +12,7 @@ class DosenImport implements ToModel
 {
     public function model(array $row): ?Model
     {
-        if ($row[0] === 'nama')
+        if ($row[0] === 'nama' || empty($row[0]))
             return null;
 
         // Cek duplikat NIP

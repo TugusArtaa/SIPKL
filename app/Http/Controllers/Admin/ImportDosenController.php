@@ -17,6 +17,7 @@ class ImportDosenController extends Controller
     public function store(ImportDosenRequest $request)
     {
         Excel::import(new DosenImport, $request->file('file'));
-        return back()->with('success', 'Data dosen berhasil diimport.');
+
+        return redirect()->route('admin.dosen.index')->with('success', 'Dosen berhasil ditambahkan.');
     }
 }

@@ -1,10 +1,4 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
-            Upload & Kelola Format Laporan
-        </h2>
-    </x-slot>
-
     {{-- Header Section --}}
     <div class="mb-8 bg-white/[0.03] border border-white/10 rounded-2xl p-6 shadow-lg">
         <div class="flex items-center gap-4">

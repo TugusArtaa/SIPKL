@@ -15,7 +15,7 @@ class AdminDosenController extends Controller
      */
     public function index()
     {
-        $dosen = Dosen::with('user')->latest()->get();
+        $dosen = Dosen::with('user')->latest()->paginate(8);
 
         return view('admin.dosen.index', compact('dosen'));
     }
@@ -35,8 +35,9 @@ class AdminDosenController extends Controller
     {
         $request->validate([
             'nama' => 'required|string|max:255',
-            'nip' => 'required|string|unique:dosens,nip',
+            'nip' => 'required|string|unique:dosen,nip',
             'email' => 'required|email|unique:users,email',
+            'program_studi' => 'required|string|max:255',
         ]);
 
         // Buat akun user
@@ -52,8 +53,25 @@ class AdminDosenController extends Controller
             'user_id' => $user->id,
             'nama' => $request->nama,
             'nip' => $request->nip,
+            'program_studi' => $request->program_studi,
         ]);
 
         return redirect()->route('admin.dosen.index')->with('success', 'Dosen berhasil ditambahkan.');
+    }
+
+    /**
+     * Hapus data dosen.
+     */
+    public function destroy($id)
+    {
+        $dosen = Dosen::findOrFail($id);
+
+        if ($dosen->user_id) {
+            User::where('id', $dosen->user_id)->delete();
+        }
+
+        $dosen->delete();
+
+        return redirect()->route('admin.dosen.index')->with('success', 'Dosen berhasil dihapus.');
     }
 }

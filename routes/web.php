@@ -70,6 +70,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('/dosen', [AdminDosenController::class, 'store'])->name('dosen.store');
     Route::get('/dosen/import', [ImportDosenController::class, 'create'])->name('dosen.import.form');
     Route::post('/dosen/import', [ImportDosenController::class, 'store'])->name('dosen.import');
+    Route::delete('/dosen/{id}', [AdminDosenController::class, 'destroy'])->name('dosen.destroy');
 
     // CRUD Perusahaan
     Route::resource('perusahaan', PerusahaanController::class)->except('show');
