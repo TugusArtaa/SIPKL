@@ -72,7 +72,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('/dosen/import', [ImportDosenController::class, 'store'])->name('dosen.import');
 
     // CRUD Perusahaan
-    Route::resource('perusahaan', PerusahaanController::class);
+    Route::resource('perusahaan', PerusahaanController::class)->except('show');
 
     // Verifikasi Laporan PKL
     Route::get('/laporan/verifikasi', [DosenLaporanController::class, 'index'])->name('laporan.verifikasi');

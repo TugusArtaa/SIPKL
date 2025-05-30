@@ -18,6 +18,6 @@ class ImportMahasiswaController extends Controller
     {
         Excel::import(new MahasiswaImport, $request->file('file'));
 
-        return redirect()->back()->with('success', 'Data mahasiswa berhasil diimport.');
+        return redirect()->route('admin.mahasiswa.index')->with('success', 'Mahasiswa berhasil ditambahkan.');
     }
 }
