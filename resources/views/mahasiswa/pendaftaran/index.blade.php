@@ -55,7 +55,7 @@
                 <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
             </div>
 
-            <form action="{{ route('mahasiswa.pendaftaran.store') }}" method=" POST" class="space-y-6">
+            <form action="{{ route('mahasiswa.pendaftaran.store') }}" method="POST" class="space-y-6">
                 @csrf
 
                 {{-- Perusahaan Field --}}
@@ -90,9 +90,9 @@
                         <input id="bidang_pkl" type="text" name="bidang_pkl" required
                             placeholder="Contoh: Web Development, Data Science, dll."
                             class="w-full px-4 py-3 rounded-xl bg-white/10 text-white border border-white/20 
-                                                                                                                        focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50
-                                                                                                                        backdrop-blur-sm transition-all duration-200 placeholder-slate-400
-                                                                                                                        hover:bg-white/15">
+                                                                                                                            focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50
+                                                                                                                            backdrop-blur-sm transition-all duration-200 placeholder-slate-400
+                                                                                                                            hover:bg-white/15">
                     </div>
                     <x-input-error :messages="$errors->get('bidang_pkl')" class="text-red-400 text-sm mt-1" />
                 </div>
@@ -227,7 +227,7 @@
                         <div>
                             <span
                                 class="px-3 py-1 rounded-full text-xs font-medium
-                                                                                                                            {{ $pendaftaran->status === 'disetujui' ? 'bg-green-500/20 text-green-300 border border-green-400/30' : ($pendaftaran->status === 'ditolak' ? 'bg-red-500/20 text-red-300 border border-red-400/30' : 'bg-yellow-500/20 text-yellow-300 border border-yellow-400/30') }}">
+                                                                                                                                {{ $pendaftaran->status === 'disetujui' ? 'bg-green-500/20 text-green-300 border border-green-400/30' : ($pendaftaran->status === 'ditolak' ? 'bg-red-500/20 text-red-300 border border-red-400/30' : 'bg-yellow-500/20 text-yellow-300 border border-yellow-400/30') }}">
                                 {{ $pendaftaran->status === 'disetujui' ? 'Disetujui' : ($pendaftaran->status === 'ditolak' ? 'Ditolak' : 'Menunggu Persetujuan') }}
                             </span>
                         </div>
