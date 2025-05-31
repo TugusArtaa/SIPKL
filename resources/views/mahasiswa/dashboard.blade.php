@@ -45,6 +45,49 @@
             </div>
         </div>
 
+        {{-- Hero Section SIPTI --}}
+        <div class="bg-white/[0.03] border border-white/10 rounded-xl p-8 mb-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                {{-- Left Side - Images --}}
+                <div class="order-2 lg:order-1">
+                    <div class="flex justify-center">
+                        <div class="relative group">
+                            <div
+                                class="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-400/20 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div class="relative">
+                                <img src="/Mascot.png" alt="SIPTI Mascot"
+                                    class="w-[320px] h-[320px] object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105 mx-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Right Side - Typography --}}
+                <div class="space-y-8 order-1 lg:order-2">
+                    {{-- Title --}}
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-2">
+                            Apa itu <span
+                                class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">SIPTI?</span>
+                        </h2>
+                    </div>
+
+                    {{-- Description --}}
+                    <div class="space-y-6">
+                        <p class="text-slate-300 text-lg leading-relaxed text-center lg:text-left">
+                            <span class="text-cyan-400 font-semibold">Sistem Informasi Praktik Kerja Lapangan</span>
+                            <span class="text-white">Jurusan Teknologi Informasi</span> adalah platform digital yang
+                            memfasilitasi mahasiswa dalam mengelola seluruh proses PKL dengan mudah, dengan fitur
+                            Pendaftaran Online, Pengajuan Bimbingan Online, dan Pelaporan Digital. <br><br>Selanjutnya,
+                            Anda dapat melihat ringkasan informasi PKL pada bagian di bawah ini.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         {{-- Quick Stats Overview --}}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             @php
