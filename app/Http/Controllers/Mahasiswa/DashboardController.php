@@ -18,10 +18,4 @@ class DashboardController extends Controller
         $perusahaan = Perusahaan::paginate(10);
         return view('mahasiswa.perusahaan.index', compact('perusahaan'));
     }
-
-    public function bimbingan()
-    {
-        return view('mahasiswa.bimbingan');
-    }
-
 }

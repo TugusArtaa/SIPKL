@@ -4,10 +4,8 @@
         <div class="flex items-center gap-4">
             <div>
                 <h1 class="text-3xl font-bold text-white mb-2">Pendaftaran PKL</h1>
-                @if(!$pendaftaran)
-                <p class="text-blue-100 text-sm">Silakan lengkapi form di bawah ini untuk mendaftar Praktik Kerja
-                    Lapangan</p>
-                @endif
+                <p class="text-blue-100 text-sm">Silahkan lengkapi form untuk mendaftar PKL dan Pantau status PKL Anda.
+                </p>
             </div>
         </div>
         <div class="mt-4">
@@ -49,82 +47,89 @@
     <div class="w-full">
         @if(!$pendaftaran)
         {{-- Registration Form --}}
-        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-2xl">
-            <div class="mb-6">
-                <h3 class="text-xl font-semibold text-white mb-2">Form Pendaftaran</h3>
-                <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
-            </div>
-
-            <form action="{{ route('mahasiswa.pendaftaran.store') }}" method="POST" class="space-y-6">
-                @csrf
-
-                {{-- Perusahaan Field --}}
-                <div class="space-y-2">
-                    <label for="perusahaan_id" class="block text-sm font-medium text-slate-200">
-                        Pilih Perusahaan <span class="text-red-400">*</span>
-                    </label>
-                    <div class="relative">
-                        <select id="perusahaan_id" name="perusahaan_id" required
-                            class="w-full px-4 py-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 backdrop-blur-sm transition-all duration-200 appearance-none hover:bg-white/15">
-                            <option value="" class="bg-slate-800 text-slate-300">-- Pilih Perusahaan --</option>
-                            @foreach($perusahaan as $item)
-                            <option value="{{ $item->id }}" class=" bg-slate-800 text-white">{{ $item->nama }}</option>
-                            @endforeach
-                        </select>
-                        <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-                    </div>
-                    <x-input-error :messages="$errors->get('perusahaan_id')" class="text-red-400 text-sm mt-1" />
-                </div>
-
-                {{-- Bidang PKL Field --}}
-                <div class="space-y-2">
-                    <label for="bidang_pkl" class="block text-sm font-medium text-slate-200">
-                        Bidang PKL <span class="text-red-400">*</span>
-                    </label>
-                    <div class="relative">
-                        <input id="bidang_pkl" type="text" name="bidang_pkl" required
-                            placeholder="Contoh: Web Development, Data Science, dll."
-                            class="w-full px-4 py-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 backdrop-blur-sm transition-all duration-200 placeholder-slate-400 hover:bg-white/15">
-                    </div>
-                    <x-input-error :messages="$errors->get('bidang_pkl')" class="text-red-400 text-sm mt-1" />
-                </div>
-
-                {{-- Periode Field --}}
-                <div class="space-y-2">
-                    <label for="periode" class="block text-sm font-medium text-slate-200">
-                        Periode PKL <span class="text-red-400">*</span>
-                    </label>
-                    <div class="relative">
-                        <input id="periode" type="text" name="periode" required
-                            placeholder="Contoh: Semester Genap 2025"
-                            class="w-full px-4 py-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 backdrop-blur-sm transition-all duration-200 placeholder-slate-400 hover:bg-white/15">
-                        <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <x-input-error :messages="$errors->get('periode')" class="text-red-400 text-sm mt-1" />
-                </div>
-
-                {{-- Submit Button --}}
-                <div class="pt-4 flex justify-end">
-                    <button type="submit"
-                        class="px-8 py-3 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 rounded-xl text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center space-x-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
+        <div class="mb-8 backdrop-blur-sm bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl overflow-hidden">
+            {{-- Card Header --}}
+            <div class="px-6 py-4 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
-                        <span>Daftar PKL</span>
-                    </button>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Form Pendaftaran PKL</h3>
+                        <p class="text-sm text-slate-400">Lengkapi seluruh dengan data yang benar</p>
+                    </div>
                 </div>
-            </form>
+            </div>
+            {{-- Form Content --}}
+            <div class="p-6">
+                <form action="{{ route('mahasiswa.pendaftaran.store') }}" method="POST" class="space-y-6">
+                    @csrf
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {{-- Perusahaan Field --}}
+                        <div class="space-y-2">
+                            <label for="perusahaan_id" class="block text-sm font-medium text-white/90">
+                                Pilih Perusahaan <span class="text-red-400">*</span>
+                            </label>
+                            <div class="relative">
+                                <select id="perusahaan_id" name="perusahaan_id" required
+                                    class="w-full px-4 py-3 bg-white/[0.05] text-white rounded-lg border border-white/20 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 focus:outline-none transition-all duration-200 hover:bg-white/10 hover:border-white/30 backdrop-blur-sm appearance-none">
+                                    <option value="" class="bg-slate-800 text-slate-300">-- Pilih Perusahaan --</option>
+                                    @foreach($perusahaan as $item)
+                                    <option value="{{ $item->id }}" class="bg-slate-800 text-white">{{ $item->nama }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-white/60" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <x-input-error :messages="$errors->get('perusahaan_id')"
+                                class="text-red-400 text-sm mt-1" />
+                        </div>
+                        {{-- Bidang PKL Field --}}
+                        <div class="space-y-2">
+                            <label for="bidang_pkl" class="block text-sm font-medium text-white/90">
+                                Bidang PKL <span class="text-red-400">*</span>
+                            </label>
+                            <input id="bidang_pkl" type="text" name="bidang_pkl" required
+                                placeholder="Contoh: Web Development, Data Science, dll."
+                                class="w-full px-4 py-3 bg-white/[0.05] text-white rounded-lg border border-white/20 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 focus:outline-none transition-all duration-200 hover:bg-white/10 hover:border-white/30 backdrop-blur-sm placeholder-slate-400" />
+                            <x-input-error :messages="$errors->get('bidang_pkl')" class="text-red-400 text-sm mt-1" />
+                        </div>
+                        {{-- Periode Field --}}
+                        <div class="space-y-2 md:col-span-2">
+                            <label for="periode" class="block text-sm font-medium text-white/90">
+                                Periode PKL <span class="text-red-400">*</span>
+                            </label>
+                            <div class="relative">
+                                <input id="periode" type="text" name="periode" required
+                                    placeholder="Contoh: Semester Genap 2025"
+                                    class="w-full px-4 py-3 bg-white/[0.05] text-white rounded-lg border border-white/20 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 focus:outline-none transition-all duration-200 hover:bg-white/10 hover:border-white/30 backdrop-blur-sm placeholder-slate-400" />
+                            </div>
+                            <x-input-error :messages="$errors->get('periode')" class="text-red-400 text-sm mt-1" />
+                        </div>
+                    </div>
+                    {{-- Submit Button --}}
+                    <div class="pt-4 border-t border-white/10 flex justify-end">
+                        <button type="submit"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white text-sm font-medium rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Daftar PKL
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         @else
@@ -136,7 +141,6 @@
                         <path fill-rule="evenodd"
                             d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                             clip-rule="evenodd" />
-                    </svg>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-2">
                     @if($pendaftaran->status === 'diterima')
@@ -157,7 +161,6 @@
                             <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
                         </div>
                         <div>
                             <p class="text-sm text-slate-400 font-medium">Perusahaan</p>

@@ -22,6 +22,7 @@ use App\Http\Controllers\Dosen\DashboardController as DosenDashboardController;
 use App\Http\Controllers\Mahasiswa\DashboardController as MahasiswaDashboardController;
 use App\Http\Controllers\Mahasiswa\LaporanController as MahasiswaLaporanController;
 use App\Http\Controllers\Mahasiswa\PendaftaranController;
+use App\Http\Controllers\Mahasiswa\BimbinganController;
 
 // =======================
 // Halaman awal
@@ -112,7 +113,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->name('mahasi
     Route::get('/perusahaan', [MahasiswaDashboardController::class, 'perusahaan'])->name('perusahaan');
     Route::get('/laporan', [MahasiswaLaporanController::class, 'index'])->name('laporan');
     Route::post('/laporan/upload', [MahasiswaLaporanController::class, 'upload'])->name('laporan.upload');
-    Route::get('/bimbingan', [MahasiswaDashboardController::class, 'bimbingan'])->name('bimbingan');
+    Route::get('/bimbingan', [BimbinganController::class, 'index'])->name('bimbingan');
+    Route::post('/bimbingan', [BimbinganController::class, 'store'])->name('bimbingan.store');
     Route::get('/format-laporan', function () {
         $format = \App\Models\FormatLaporan::latest()->get();
         return view('mahasiswa.format.index', compact('format'));

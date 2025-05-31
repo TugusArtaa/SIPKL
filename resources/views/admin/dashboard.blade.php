@@ -22,7 +22,7 @@
 
             <!-- Total Mahasiswa -->
             <div
-                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8">
+                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl transition-all duration-300 p-8">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
@@ -47,7 +47,7 @@
 
             <!-- Total Dosen -->
             <div
-                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8">
+                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl transition-all duration-300 p-8">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
@@ -72,7 +72,7 @@
 
             <!-- Total Perusahaan -->
             <div
-                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8">
+                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl transition-all duration-300 p-8">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
@@ -98,7 +98,7 @@
 
             <!-- Total Laporan PKL -->
             <div
-                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8">
+                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl transition-all duration-300 p-8">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
@@ -124,7 +124,7 @@
 
             <!-- Laporan Pending -->
             <div
-                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8">
+                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl transition-all duration-300 p-8">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
@@ -149,7 +149,7 @@
 
             <!-- Laporan Diterima -->
             <div
-                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8">
+                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl transition-all duration-300 p-8">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
@@ -174,7 +174,7 @@
 
             <!-- Laporan Ditolak -->
             <div
-                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8">
+                class="group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-2xl shadow-xl transition-all duration-300 p-8">
                 <div
                     class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
