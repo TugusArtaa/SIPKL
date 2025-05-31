@@ -4,15 +4,14 @@
 
         {{-- Welcome Hero Section --}}
         <div class="relative overflow-hidden">
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-cyan-500/10 to-cyan-600/20 rounded-2xl blur-xl">
+            <div class="absolute inset-0 bg-white/[0.03] border border-white/10 rounded-2xl">
             </div>
-            <div
-                class="relative bg-gradient-to-r from-blue-600/30 via-cyan-500/20 to-cyan-600/30 border border-white/20 rounded-2xl p-8 backdrop-blur-sm">
+            <div class="relative bg-white/[0.03] border border-white/10 rounded-2xl p-8">
                 <div class="flex items-center justify-between">
                     <div>
                         <h1 class="text-3xl font-bold text-white mb-2">
-                            Selamat Datang, {{ Auth::user()->mahasiswa->nama ?? Auth::user()->name }}!
+                            Selamat Datang, <span
+                                class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">{{ Auth::user()->mahasiswa->nama ?? Auth::user()->name }}!</span>
                         </h1>
                         <p class="text-slate-300 text-lg">
                             di Sistem Informasi Praktik Kerja Lapangan - Jurusan Teknologi Informasi
@@ -37,8 +36,11 @@
                         </div>
                     </div>
                     <div class="hidden md:block">
-                        <div class="w-28 h-28 flex items-center justify-center">
-                            <img src="/home.png" alt="Logo" />
+                        <div class="w-28 h-28 flex items-center justify-center relative group">
+                            <div
+                                class="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-400/20 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <img src="/home.png" alt="Logo" class="relative" />
                         </div>
                     </div>
                 </div>
