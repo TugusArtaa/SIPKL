@@ -11,11 +11,11 @@
 
     <!-- Section Divider -->
     @if(!$collapsed)
-        <div class="px-3 py-2 mt-6 mb-2">
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Manajemen Bimbingan</p>
-        </div>
+    <div class="px-3 py-2 mt-6 mb-2">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Manajemen Bimbingan</p>
+    </div>
     @else
-        <div class="h-px bg-white/10 my-4"></div>
+    <div class="h-px bg-white/10 my-4"></div>
     @endif
 
     <!-- Mahasiswa Bimbingan -->
@@ -30,11 +30,11 @@
 
     <!-- Section Divider -->
     @if(!$collapsed)
-        <div class="px-3 py-2 mt-6 mb-2">
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Penilaian</p>
-        </div>
+    <div class="px-3 py-2 mt-6 mb-2">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Penilaian</p>
+    </div>
     @else
-        <div class="h-px bg-white/10 my-4"></div>
+    <div class="h-px bg-white/10 my-4"></div>
     @endif
 
     <!-- Input Nilai -->
@@ -45,11 +45,11 @@
 
     <!-- Section Divider -->
     @if(!$collapsed)
-        <div class="px-3 py-2 mt-6 mb-2">
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Profil</p>
-        </div>
+    <div class="px-3 py-2 mt-6 mb-2">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Profil</p>
+    </div>
     @else
-        <div class="h-px bg-white/10 my-4"></div>
+    <div class="h-px bg-white/10 my-4"></div>
     @endif
 
     <!-- Profil -->

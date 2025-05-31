@@ -89,10 +89,7 @@
                     <div class="relative">
                         <input id="bidang_pkl" type="text" name="bidang_pkl" required
                             placeholder="Contoh: Web Development, Data Science, dll."
-                            class="w-full px-4 py-3 rounded-xl bg-white/10 text-white border border-white/20 
-                                                                                                                            focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50
-                                                                                                                            backdrop-blur-sm transition-all duration-200 placeholder-slate-400
-                                                                                                                            hover:bg-white/15">
+                            class="w-full px-4 py-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 backdrop-blur-sm transition-all duration-200 placeholder-slate-400 hover:bg-white/15">
                     </div>
                     <x-input-error :messages="$errors->get('bidang_pkl')" class="text-red-400 text-sm mt-1" />
                 </div>
@@ -197,8 +194,8 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-3">
                             <div
-                                class="w-10 h-10 bg-{{ $pendaftaran->status === 'disetujui' ? 'green' : ($pendaftaran->status === 'ditolak' ? 'red' : 'yellow') }}-500/20 rounded-lg flex items-center justify-center">
-                                @if($pendaftaran->status === 'disetujui')
+                                class="w-10 h-10 bg-{{ $pendaftaran->status === 'diterima' ? 'green' : ($pendaftaran->status === 'ditolak' ? 'red' : 'yellow') }}-500/20 rounded-lg flex items-center justify-center">
+                                @if($pendaftaran->status === 'diterima')
                                 <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -226,9 +223,8 @@
                         </div>
                         <div>
                             <span
-                                class="px-3 py-1 rounded-full text-xs font-medium
-                                                                                                                                {{ $pendaftaran->status === 'disetujui' ? 'bg-green-500/20 text-green-300 border border-green-400/30' : ($pendaftaran->status === 'ditolak' ? 'bg-red-500/20 text-red-300 border border-red-400/30' : 'bg-yellow-500/20 text-yellow-300 border border-yellow-400/30') }}">
-                                {{ $pendaftaran->status === 'disetujui' ? 'Disetujui' : ($pendaftaran->status === 'ditolak' ? 'Ditolak' : 'Menunggu Persetujuan') }}
+                                class="px-3 py-1 rounded-full text-xs font-medium {{ $pendaftaran->status === 'diterima' ? 'bg-green-500/20 text-green-300 border border-green-400/30' : ($pendaftaran->status === 'ditolak' ? 'bg-red-500/20 text-red-300 border border-red-400/30' : 'bg-yellow-500/20 text-yellow-300 border border-yellow-400/30') }}">
+                                {{ $pendaftaran->status === 'diterima' ? 'Diterima' : ($pendaftaran->status === 'ditolak' ? 'Ditolak' : 'Menunggu Persetujuan') }}
                             </span>
                         </div>
                     </div>

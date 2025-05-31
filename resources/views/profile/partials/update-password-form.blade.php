@@ -6,8 +6,10 @@
                 <div
                     class="p-3 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-xl border border-cyan-400/30 backdrop-blur-sm">
                     <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        <rect x="3" y="11" width="18" height="10" rx="2" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
                     </svg>
                 </div>
                 <div>

@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdminDosenController;
 use App\Http\Controllers\Admin\PerusahaanController;
 use App\Http\Controllers\Admin\LaporanController as DosenLaporanController;
 use App\Http\Controllers\Admin\FormatLaporanController;
+use App\Http\Controllers\Admin\PendaftaranPklController;
 
 // Dosen
 use App\Http\Controllers\Dosen\DashboardController as DosenDashboardController;
@@ -75,6 +76,10 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
     // CRUD Perusahaan
     Route::resource('perusahaan', PerusahaanController::class)->except('show');
+
+    // Verifikasi Pendaftaran PKL
+    Route::get('/pendaftaran', [PendaftaranPklController::class, 'index'])->name('pendaftaran.index');
+    Route::post('/pendaftaran/{id}/verifikasi', [PendaftaranPklController::class, 'verifikasi'])->name('pendaftaran.verifikasi');
 
     // Verifikasi Laporan PKL
     Route::get('/laporan/verifikasi', [DosenLaporanController::class, 'index'])->name('laporan.verifikasi');
