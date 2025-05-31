@@ -80,7 +80,7 @@
                         <div class="relative">
                             <input type="file" name="file" id="file" accept=".pdf,.doc,.docx" required
                                 class="block w-full text-sm text-slate-300 bg-white/[0.05] backdrop-blur-sm border border-white/20 rounded-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200 hover:bg-white/[0.08]
-                                file:mr-4 file:py-3 file:px-4 file:rounded-l-xl file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-emerald-600 file:to-teal-600 file:text-white file:cursor-pointer file:hover:from-emerald-700 file:hover:to-teal-700 file:transition-all file:duration-200" />
+                                file:mr-4 file:py-3 file:px-4 file:rounded-l-xl file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-blue-600 file:to-cyan-600 file:text-white file:cursor-pointer file:hover:from-blue-700 file:hover:to-cyan-700 file:transition-all file:duration-200" />
                         </div>
                         <p class="text-xs text-slate-400 flex items-center gap-1">
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@
                     {{-- Submit Button --}}
                     <div class="pt-2">
                         <button type="submit"
-                            class="w-full group relative overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-slate-900">
+                            class="w-full group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-slate-900">
                             <span class="relative flex items-center justify-center gap-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

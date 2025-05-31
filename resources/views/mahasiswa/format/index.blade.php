@@ -1,15 +1,17 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
-            Download Format Laporan PKL
-        </h2>
-    </x-slot>
-
     {{-- Header Section --}}
-    <div class="mb-8">
-        <h1 class="text-3xl font-bold text-white mb-2">Format Laporan PKL</h1>
-        <p class="text-slate-400 text-sm">Download template dan format laporan yang telah disediakan untuk memudahkan
-            penyusunan laporan PKL Anda</p>
+    <div class="mb-8 bg-white/[0.03] border border-white/10 rounded-2xl p-6 shadow-lg">
+        <div class="flex items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-white mb-2">Format Laporan</h1>
+                <p class="text-blue-100 text-sm">Download template dan format laporan yang telah disediakan untuk
+                    memudahkan
+                    penyusunan laporan PKL Anda</p>
+            </div>
+        </div>
+        <div class="mt-4">
+            <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
+        </div>
     </div>
 
     {{-- Main Content --}}

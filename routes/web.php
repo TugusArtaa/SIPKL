@@ -20,6 +20,7 @@ use App\Http\Controllers\Dosen\DashboardController as DosenDashboardController;
 // Mahasiswa
 use App\Http\Controllers\Mahasiswa\DashboardController as MahasiswaDashboardController;
 use App\Http\Controllers\Mahasiswa\LaporanController as MahasiswaLaporanController;
+use App\Http\Controllers\Mahasiswa\PendaftaranController;
 
 // =======================
 // Halaman awal
@@ -100,7 +101,8 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->grou
 // =======================
 Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->name('mahasiswa.')->group(function () {
     Route::get('/dashboard', [MahasiswaDashboardController::class, 'index'])->name('dashboard');
-    Route::get('/pendaftaran', [MahasiswaDashboardController::class, 'pendaftaran'])->name('pendaftaran');
+    Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
+    Route::post('/pendaftaran', [PendaftaranController::class, 'store'])->name('pendaftaran.store');
     Route::get('/perusahaan', [MahasiswaDashboardController::class, 'perusahaan'])->name('perusahaan');
     Route::get('/laporan', [MahasiswaLaporanController::class, 'index'])->name('laporan');
     Route::post('/laporan/upload', [MahasiswaLaporanController::class, 'upload'])->name('laporan.upload');
