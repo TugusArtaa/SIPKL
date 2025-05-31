@@ -138,7 +138,15 @@
                             clip-rule="evenodd" />
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-2">Anda sudah terdaftar untuk PKL!</h3>
+                <h3 class="text-2xl font-bold text-white mb-2">
+                    @if($pendaftaran->status === 'diterima')
+                    Anda resmi terdaftar untuk melaksanakan PKL!
+                    @elseif($pendaftaran->status === 'ditolak')
+                    Maaf, pendaftaran PKL Anda belum disetujui.
+                    @else
+                    Pendaftaran Anda sedang dalam tahap peninjauan akademik.
+                    @endif
+                </h3>
                 <p class="text-slate-300">Berikut rincian pendaftaran PKL Anda:</p>
             </div>
 
@@ -170,7 +178,8 @@
                         </div>
                         <div>
                             <p class="text-sm text-slate-400 font-medium">Bidang PKL</p>
-                            <p class="text-white font-semibold">{{ $pendaftaran->bidang_pkl ?? 'Belum ditentukan' }}</p>
+                            <p class="text-white font-semibold">{{ $pendaftaran->bidang_pkl ?? 'Belum ditentukan' }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -233,8 +242,30 @@
 
             <div class="mt-6 pt-6 border-t border-white/10">
                 <p class="text-slate-400 text-sm text-center">
-                    Selanjutnya, proses akan dikonfirmasi oleh pihak akademik.
+                    @if($pendaftaran->status === 'diterima')
+                    Silakan menunggu informasi lebih lanjut dari pihak akademik atau dosen pembimbing terkait
+                    pelaksanaan PKL Anda.
+                    @elseif($pendaftaran->status === 'ditolak')
+                    Silakan hubungi pihak akademik untuk informasi lebih lanjut atau ajukan pendaftaran ulang jika
+                    diperlukan.
+                    @else
+                    Selanjutnya, proses akan dikonfirmasi oleh pihak akademik. Mohon cek status pendaftaran Anda secara
+                    berkala.
+                    @endif
                 </p>
+                @if($pendaftaran->status === 'ditolak')
+                <div class="mt-4 flex justify-center">
+                    <form action="{{ route('mahasiswa.pendaftaran.destroy', $pendaftaran->id) }}" method="POST"
+                        onsubmit="return confirm('Apakah Anda yakin ingin mengajukan pendaftaran ulang? Data pendaftaran sebelumnya akan dihapus.')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="px-6 py-2 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold rounded-lg shadow transition-all duration-200">
+                            Ajukan Pendaftaran Ulang
+                        </button>
+                    </form>
+                </div>
+                @endif
             </div>
         </div>
         @endif

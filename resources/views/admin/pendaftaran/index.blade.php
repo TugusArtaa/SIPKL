@@ -103,7 +103,7 @@
                                     <option value="ditolak" class="bg-slate-800 text-slate-300">Ditolak</option>
                                 </select>
                                 <button type="submit"
-                                    class="bg-blue-600/80 hover:bg-blue-600 text-white px-4 py-2 text-sm rounded-lg transition-all duration-200 backdrop-blur-sm border border-blue-500/20 hover:border-blue-500/40 focus:outline-none focus:ring-2 focus:ring-blue-500/50">
+                                    class="bg-blue-600/80 hover:bg-blue-600 text-white text-sm rounded-lg transition-all duration-200 backdrop-blur-sm border border-blue-500/20 hover:border-blue-500/40 focus:outline-none focus:ring-2 focus:ring-blue-500/50 flex items-center justify-center h-[42px] min-w-[120px] px-3">
                                     <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

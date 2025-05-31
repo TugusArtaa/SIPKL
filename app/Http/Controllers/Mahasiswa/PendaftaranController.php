@@ -44,4 +44,15 @@ class PendaftaranController extends Controller
 
         return redirect()->route('mahasiswa.pendaftaran')->with('success', 'Pendaftaran PKL berhasil.');
     }
+
+    public function destroy($id)
+    {
+        $pendaftaran = PendaftaranPkl::findOrFail($id);
+        // Pastikan hanya mahasiswa yang bersangkutan yang bisa menghapus
+        if ($pendaftaran->mahasiswa_id !== Auth::user()->mahasiswa->id) {
+            abort(403);
+        }
+        $pendaftaran->delete();
+        return redirect()->route('mahasiswa.pendaftaran')->with('success', 'Anda dapat mengajukan pendaftaran ulang.');
+    }
 }

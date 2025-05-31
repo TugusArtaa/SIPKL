@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mahasiswa;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Perusahaan;
 
 class DashboardController extends Controller
 {
@@ -11,19 +12,11 @@ class DashboardController extends Controller
     {
         return view('mahasiswa.dashboard');
     }
-    public function pendaftaran()
-    {
-        return view('mahasiswa.pendaftaran');
-    }
 
     public function perusahaan()
     {
-        return view('mahasiswa.perusahaan');
-    }
-
-    public function laporan()
-    {
-        return view('mahasiswa.laporan');
+        $perusahaan = Perusahaan::paginate(10);
+        return view('mahasiswa.perusahaan.index', compact('perusahaan'));
     }
 
     public function bimbingan()

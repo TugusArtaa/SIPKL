@@ -75,7 +75,7 @@
                         <div class="relative">
                             <input id="file" name="file" type="file" accept=".pdf,.doc,.docx" required
                                 class="block w-full text-sm text-slate-300 bg-white/[0.05] backdrop-blur-sm border border-white/20 rounded-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200 hover:bg-white/[0.08]
-                                                                        file:mr-4 file:py-3 file:px-4 file:rounded-l-xl file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-blue-600 file:to-cyan-600 file:text-white file:cursor-pointer file:hover:from-blue-700 file:hover:to-cyan-700 file:transition-all file:duration-200" />
+                                                                                file:mr-4 file:py-3 file:px-4 file:rounded-l-xl file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-blue-600 file:to-cyan-600 file:text-white file:cursor-pointer file:hover:from-blue-700 file:hover:to-cyan-700 file:transition-all file:duration-200" />
                         </div>
                         <p class="text-xs text-slate-400 mt-1">
                             <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,7 +133,7 @@
                     <div class="flex items-center gap-3">
                         <span class="text-sm text-slate-300 font-medium">Status:</span>
                         <span class="px-3 py-1.5 rounded-full font-semibold text-xs inline-flex items-center gap-1.5
-                                                                                                            {{ $laporan->status === 'diterima' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' :
+                                                                                                                            {{ $laporan->status === 'diterima' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' :
                 ($laporan->status === 'ditolak' ? 'bg-red-500/20 text-red-300 border border-red-500/30' :
                     'bg-amber-500/20 text-amber-300 border border-amber-500/30') }}">
 
@@ -160,6 +160,10 @@
                             {{ ucfirst($laporan->status) }}
                         </span>
                     </div>
+                    @if($laporan->status === 'ditolak')
+                    <p class="text-xs text-red-300 mt-2">Tolong upload ulang laporan PKL anda sesuai susunan template!
+                    </p>
+                    @endif
 
                     {{-- File Info --}}
                     <div class="border-t border-white/10 pt-4">
