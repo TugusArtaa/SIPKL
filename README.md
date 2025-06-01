@@ -95,6 +95,14 @@ php artisan storage:link
 php artisan serve
 ```
 
+## 🧩 Teknologi
+
+-   Laravel 11
+-   Laravel Breeze (auth)
+-   Tailwind CSS
+-   Vite
+-   MySQL
+
 ## Tampilan User Interface
 
 ### 🖼️ Login
@@ -112,11 +120,3 @@ php artisan serve
 ### 🧑‍🏫 Dosen
 
 ![Home Dosen](public/screenshots/home_mahasiswa.png)
-
-## 🧩 Teknologi
-
--   Laravel 11
--   Laravel Breeze (auth)
--   Tailwind CSS
--   Vite
--   MySQL
