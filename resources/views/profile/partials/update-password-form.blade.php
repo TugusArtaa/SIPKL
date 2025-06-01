@@ -56,7 +56,7 @@
                         focus:border-cyan-400 focus:ring-2 focus:ring-cyan-200/30 focus:bg-white/10
                         transition-all duration-200 ease-in-out
                         hover:border-cyan-400/40 hover:bg-white/[0.07]" autocomplete="new-password"
-                    placeholder="Masukkan kata sandi baru" />
+                    placeholder="Masukkan kata sandi baru (8 Digit)" />
                 <x-input-error class="mt-2 text-red-400/90 text-sm"
                     :messages="$errors->updatePassword->get('password')" />
             </div>

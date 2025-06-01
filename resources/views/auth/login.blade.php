@@ -74,23 +74,6 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
-        <!-- Remember Me -->
-        <div class="flex items-center justify-between">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox"
-                    class="rounded border-gray-300 text-blue-600 shadow-sm focus:ring-blue-500 transition-colors"
-                    name="remember">
-                <span class="ms-2 text-sm text-white">{{ __('Ingat saya') }}</span>
-            </label>
-
-            @if (Route::has('password.request'))
-            <a class="text-sm text-cyan-400 hover:text-cyan-200 transition-colors font-medium"
-                href="{{ route('password.request') }}">
-                {{ __('Lupa password?') }}
-            </a>
-            @endif
-        </div>
-
         <!-- Login Button -->
         <div class="flex items-center justify-center mt-6">
             <x-primary-button
