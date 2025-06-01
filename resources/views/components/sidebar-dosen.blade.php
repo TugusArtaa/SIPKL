@@ -19,7 +19,7 @@
     @endif
 
     <!-- Mahasiswa Bimbingan -->
-    <x-sidebar-link route="dosen.mahasiswa" label="Mahasiswa Bimbingan" :collapsed="$collapsed" icon='<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <x-sidebar-link route="dosen.mahasiswa.bimbingan" label="Mahasiswa Bimbingan" :collapsed="$collapsed" icon='<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 7a4 4 0 11-8 0 4 4 0 018 0zM21 7a3 3 0 11-6 0 3 3 0 016 0z" />
     </svg>' />
 

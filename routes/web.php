@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\PendaftaranPklController;
 
 // Dosen
 use App\Http\Controllers\Dosen\DashboardController as DosenDashboardController;
+use App\Http\Controllers\Dosen\BimbinganPKLController;
+use App\Http\Controllers\Dosen\MahasiswaBimbinganController;
 
 // Mahasiswa
 use App\Http\Controllers\Mahasiswa\DashboardController as MahasiswaDashboardController;
@@ -97,8 +99,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 // =======================
 Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->group(function () {
     Route::get('/dashboard', [DosenDashboardController::class, 'index'])->name('dashboard');
-    Route::get('/mahasiswa-bimbingan', [DosenDashboardController::class, 'mahasiswa'])->name('mahasiswa');
-    Route::get('/jadwal-bimbingan', [DosenDashboardController::class, 'bimbingan'])->name('bimbingan');
+    Route::get('/mahasiswa-bimbingan', [MahasiswaBimbinganController::class, 'index'])->name('mahasiswa.bimbingan');
+    Route::get('/jadwal-bimbingan', [BimbinganPklController::class, 'index'])->name('bimbingan');
+    Route::post('/jadwal-bimbingan/{id}/verifikasi', [BimbinganPklController::class, 'verifikasi'])->name('bimbingan.verifikasi');
     Route::get('/input-nilai', [DosenDashboardController::class, 'nilai'])->name('nilai');
 });
 
