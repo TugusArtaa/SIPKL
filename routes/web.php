@@ -99,7 +99,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 // Dosen
 // =======================
 Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->group(function () {
-    Route::get('/dashboard', [DosenDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/home', [DosenDashboardController::class, 'index'])->name('dashboard');
     Route::get('/mahasiswa-bimbingan', [MahasiswaBimbinganController::class, 'index'])->name('mahasiswa.bimbingan');
     Route::get('/jadwal-bimbingan', [BimbinganPklController::class, 'index'])->name('bimbingan');
     Route::post('/jadwal-bimbingan/{id}/verifikasi', [BimbinganPklController::class, 'verifikasi'])->name('bimbingan.verifikasi');
@@ -111,7 +111,7 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->grou
 // Mahasiswa
 // =======================
 Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->name('mahasiswa.')->group(function () {
-    Route::get('/dashboard', [MahasiswaDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/home', [MahasiswaDashboardController::class, 'index'])->name('dashboard');
     Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
     Route::post('/pendaftaran', [PendaftaranController::class, 'store'])->name('pendaftaran.store');
     Route::delete('/pendaftaran/{id}', [PendaftaranController::class, 'destroy'])->name('pendaftaran.destroy');
