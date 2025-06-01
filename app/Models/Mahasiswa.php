@@ -39,4 +39,8 @@ class Mahasiswa extends Model
         return $this->hasOne(PendaftaranPkl::class);
     }
 
+    public function nilaiPkl()
+    {
+        return $this->hasOne(NilaiPkl::class);
+    }
 }

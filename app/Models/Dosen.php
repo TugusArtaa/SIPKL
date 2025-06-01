@@ -19,4 +19,10 @@ class Dosen extends Model
     {
         return $this->hasMany(Bimbingan::class);
     }
+
+    public function nilaiPkl()
+    {
+        return $this->hasMany(NilaiPkl::class);
+    }
+
 }

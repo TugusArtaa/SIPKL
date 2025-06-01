@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\PendaftaranPklController;
 use App\Http\Controllers\Dosen\DashboardController as DosenDashboardController;
 use App\Http\Controllers\Dosen\BimbinganPKLController;
 use App\Http\Controllers\Dosen\MahasiswaBimbinganController;
+use App\Http\Controllers\Dosen\NilaiController;
 
 // Mahasiswa
 use App\Http\Controllers\Mahasiswa\DashboardController as MahasiswaDashboardController;
@@ -102,7 +103,8 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->grou
     Route::get('/mahasiswa-bimbingan', [MahasiswaBimbinganController::class, 'index'])->name('mahasiswa.bimbingan');
     Route::get('/jadwal-bimbingan', [BimbinganPklController::class, 'index'])->name('bimbingan');
     Route::post('/jadwal-bimbingan/{id}/verifikasi', [BimbinganPklController::class, 'verifikasi'])->name('bimbingan.verifikasi');
-    Route::get('/input-nilai', [DosenDashboardController::class, 'nilai'])->name('nilai');
+    Route::get('/input-nilai', [NilaiController::class, 'index'])->name('nilai');
+    Route::post('/input-nilai', [NilaiController::class, 'store'])->name('nilai.store');
 });
 
 // =======================

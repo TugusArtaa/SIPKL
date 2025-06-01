@@ -81,7 +81,7 @@
                         <p class="text-slate-300 text-lg leading-relaxed text-center lg:text-left">
                             <span class="text-cyan-400 font-semibold">Sistem Informasi Praktik Kerja Lapangan</span>
                             <span class="text-white">Jurusan Teknologi Informasi</span> adalah platform digital yang
-                            memfasilitasi mahasiswa dalam mengelola seluruh proses PKL dengan mudah, dengan fitur
+                            memfasilitasi mahasiswa dalam mengelola seluruh proses PKL dengan mudah dengan fitur
                             Pendaftaran Online, Pengajuan Bimbingan Online, dan Pelaporan Digital. <br><br>Selanjutnya,
                             Anda dapat melihat ringkasan informasi PKL pada bagian di bawah ini.
                         </p>
