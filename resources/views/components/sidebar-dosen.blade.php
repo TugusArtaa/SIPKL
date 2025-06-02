@@ -11,7 +11,7 @@
     <!-- Section Divider -->
     @if(!$collapsed)
     <div class="px-3 py-2 mt-6 mb-2">
-        <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Manajemen Bimbingan
+        <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Bimbingan
         </p>
     </div>
     @else
