@@ -1,10 +1,12 @@
 <x-app-layout>
     {{-- Header Section --}}
-    <div class="mb-8 bg-white/[0.03] border border-white/10 rounded-2xl p-6 shadow-lg">
+    <div
+        class="mb-8 bg-white/90 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 rounded-2xl p-6 dark:shadow-lg">
         <div class="flex items-center gap-4">
             <div>
-                <h1 class="text-3xl font-bold text-white mb-2">List Perusahaan Mitra</h1>
-                <p class="text-blue-100 text-sm">Daftar perusahaan yang dapat dijadikan referensi untuk PKl nantinya.
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">List Perusahaan Mitra</h1>
+                <p class="text-gray-900 dark:text-blue-100 text-sm">Daftar perusahaan yang dapat dijadikan referensi
+                    untuk PKl nantinya.
                 </p>
             </div>
         </div>
@@ -16,10 +18,11 @@
     {{-- Area Tombol --}}
     <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
         <div>
-            <p class="text-slate-400 text-sm">Total keseluruhan perusahaan: {{ $perusahaan->total() }}</p>
+            <p class="text-gray-600 dark:text-slate-400 text-sm">Total keseluruhan perusahaan:
+                {{ $perusahaan->total() }}</p>
         </div>
         <a href="https://wa.me/6285895859312?text=Halo%20Admin,%20saya%20ingin%20mengajukan%20saran%20perusahaan%20baru%20untuk%20PKL%3A%0ANama%20Perusahaan%3A%0AAlamat%20Usaha%3A%0ANo.%20HP%3A"
-            class="inline-flex items-center px-6 py-3 bg-blue-500/80 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-200 backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50 shadow-lg hover:shadow-blue-500/25"
+            class="inline-flex items-center px-6 py-3 bg-blue-500/90 dark:bg-blue-500/80 hover:bg-blue-600 dark:hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-200 backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50 dark:shadow-lg dark:hover:shadow-blue-500/25"
             target="_blank" rel="noopener noreferrer">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
@@ -30,51 +33,56 @@
     </div>
 
     {{-- Tabel Perusahaan --}}
-    <div class="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 overflow-hidden shadow-xl">
+    <div
+        class="backdrop-blur-sm bg-white/80 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 overflow-hidden dark:shadow-xl">
         <div class="overflow-x-auto">
             <table class="min-w-full">
                 <thead>
-                    <tr class="border-b border-white/10 bg-slate-700/30">
+                    <tr class="border-b border-gray-200 dark:border-white/10 bg-gray-100/80 dark:bg-slate-700/30">
                         <th
-                            class="px-6 py-4 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider w-10">
+                            class="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider w-10">
                             No.
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
+                        <th
+                            class="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
                             Nama
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
+                        <th
+                            class="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
                             Alamat
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
+                        <th
+                            class="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
                             No.
                             HP</th>
-                        <th class="px-6 py-4 text-center text-xs font-semibold text-slate-300 uppercase tracking-wider">
+                        <th
+                            class="px-6 py-4 text-center text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
                             Aksi
                         </th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-white/10">
+                <tbody class="divide-y divide-gray-200 dark:divide-white/10">
                     @forelse($perusahaan as $index => $item)
-                    <tr class="hover:bg-white/5 transition-colors duration-200">
+                    <tr class="hover:bg-gray-100/60 dark:hover:bg-white/5 transition-colors duration-200">
                         <td
-                            class="px-6 py-4 whitespace-nowrap text-sm text-slate-300 font-medium max-w-[64px] truncate overflow-hidden">
+                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-slate-300 font-medium max-w-[64px] truncate overflow-hidden">
                             {{ $perusahaan->firstItem() + $index }}
                         </td>
                         <td
-                            class="px-6 py-4 whitespace-nowrap text-sm text-white font-medium max-w-[260px] truncate overflow-hidden">
+                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white font-medium max-w-[260px] truncate overflow-hidden">
                             {{ $item->nama }}
                         </td>
                         <td
-                            class="px-6 py-4 whitespace-nowrap text-sm text-slate-300 max-w-[260px] truncate overflow-hidden">
+                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-slate-300 max-w-[260px] truncate overflow-hidden">
                             {{ $item->alamat }}
                         </td>
                         <td
-                            class="px-6 py-4 whitespace-nowrap text-sm text-slate-300 max-w-[128px] truncate overflow-hidden">
+                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-slate-300 max-w-[128px] truncate overflow-hidden">
                             {{ $item->no_hp }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-center max-w-[128px]">
                             <a href="https://wa.me/{{ preg_replace('/^08/', '628', preg_replace('/[^0-9]/', '', $item->no_hp)) }}?text={{ urlencode('Mohon maaf mengganggu sebelumnya, saya izin bertanya apakah ada lowongan PKL di perusahaan ini?') }}"
-                                class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-600/20 hover:bg-green-600/30 text-green-400 hover:text-green-300 text-sm font-medium rounded-lg transition-all duration-200 border border-green-500/30 hover:border-green-500/50 mr-2"
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-100/60 dark:bg-green-600/20 hover:bg-green-200/80 dark:hover:bg-green-600/30 text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm font-medium rounded-lg transition-all duration-200 border border-green-300 dark:border-green-500/30 hover:border-green-400 dark:hover:border-green-500/50 mr-2"
                                 target="_blank" rel="noopener noreferrer">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                     <path
@@ -88,13 +96,15 @@
                     <tr>
                         <td colspan="5" class="px-6 py-16 text-center">
                             <div class="flex flex-col items-center justify-center">
-                                <svg class="w-16 h-16 text-slate-500 mb-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
+                                <svg class="w-16 h-16 text-gray-400 dark:text-slate-500 mb-4" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
-                                <p class="text-slate-400 text-xl font-semibold mb-2">Belum ada data perusahaan</p>
-                                <p class="text-slate-500 text-sm">Mulai dengan menambah perusahaan baru</p>
+                                <p class="text-gray-500 dark:text-slate-400 text-xl font-semibold mb-2">Belum ada data
+                                    perusahaan</p>
+                                <p class="text-gray-400 dark:text-slate-500 text-sm">Mulai dengan menambah perusahaan
+                                    baru</p>
                             </div>
                         </td>
                     </tr>
@@ -108,7 +118,7 @@
     @if($perusahaan->hasPages())
     <div class="mt-6 flex items-center justify-between">
         {{-- Info pagination --}}
-        <div class="flex items-center text-sm text-slate-400">
+        <div class="flex items-center text-sm text-gray-600 dark:text-slate-400">
             <span>
                 Menampilkan {{ $perusahaan->firstItem() ?? 0 }} - {{ $perusahaan->lastItem() ?? 0 }}
                 dari {{ $perusahaan->total() }} perusahaan
@@ -120,14 +130,14 @@
             {{-- Previous Button --}}
             @if ($perusahaan->onFirstPage())
             <span
-                class="px-3 py-2 text-sm text-slate-500 bg-white/5 border border-white/10 rounded-lg cursor-not-allowed backdrop-blur-sm">
+                class="px-3 py-2 text-sm text-gray-400 dark:text-slate-500 bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg cursor-not-allowed backdrop-blur-sm">
                 <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
             </span>
             @else
             <a href="{{ $perusahaan->previousPageUrl() }}"
-                class="px-3 py-2 text-sm text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg transition-all duration-200 backdrop-blur-sm">
+                class="px-3 py-2 text-sm text-gray-700 dark:text-slate-300 bg-white/80 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 rounded-lg transition-all duration-200 backdrop-blur-sm">
                 <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
@@ -139,12 +149,12 @@
             $perusahaan->currentPage() + 2)) as $page => $url)
             @if ($page == $perusahaan->currentPage())
             <span
-                class="px-3 py-2 text-sm text-white bg-blue-600/80 border border-blue-500/50 rounded-lg backdrop-blur-sm font-medium">
+                class="px-3 py-2 text-sm text-white dark:text-white bg-blue-600/90 dark:bg-blue-600/80 border border-blue-500/50 rounded-lg backdrop-blur-sm font-medium">
                 {{ $page }}
             </span>
             @else
             <a href="{{ $url }}"
-                class="px-3 py-2 text-sm text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg transition-all duration-200 backdrop-blur-sm hover:text-white">
+                class="px-3 py-2 text-sm text-gray-700 dark:text-slate-300 bg-white/80 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 rounded-lg transition-all duration-200 backdrop-blur-sm hover:text-gray-900 dark:hover:text-white">
                 {{ $page }}
             </a>
             @endif
@@ -152,9 +162,9 @@
 
             {{-- Show dots jika ada banyak halamannya --}}
             @if($perusahaan->currentPage() < $perusahaan->lastPage() - 2)
-                <span class="px-2 py-2 text-slate-500">...</span>
+                <span class="px-2 py-2 text-gray-400 dark:text-slate-500">...</span>
                 <a href="{{ $perusahaan->url($perusahaan->lastPage()) }}"
-                    class="px-3 py-2 text-sm text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg transition-all duration-200 backdrop-blur-sm hover:text-white">
+                    class="px-3 py-2 text-sm text-gray-700 dark:text-slate-300 bg-white/80 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 rounded-lg transition-all duration-200 backdrop-blur-sm hover:text-gray-900 dark:hover:text-white">
                     {{ $perusahaan->lastPage() }}
                 </a>
                 @endif
@@ -162,14 +172,14 @@
                 {{-- Next Button --}}
                 @if ($perusahaan->hasMorePages())
                 <a href="{{ $perusahaan->nextPageUrl() }}"
-                    class="px-3 py-2 text-sm text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg transition-all duration-200 backdrop-blur-sm">
+                    class="px-3 py-2 text-sm text-gray-700 dark:text-slate-300 bg-white/80 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 rounded-lg transition-all duration-200 backdrop-blur-sm">
                     <svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </a>
                 @else
                 <span
-                    class="px-3 py-2 text-sm text-slate-500 bg-white/5 border border-white/10 rounded-lg cursor-not-allowed backdrop-blur-sm">
+                    class="px-3 py-2 text-sm text-gray-400 dark:text-slate-500 bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg cursor-not-allowed backdrop-blur-sm">
                     <svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>

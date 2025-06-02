@@ -22,7 +22,7 @@ class BimbinganController extends Controller
         $request->validate([
             'dosen_id' => 'required|exists:dosen,id',
             'tanggal_bimbingan' => 'required|date',
-            'catatan' => 'nullable|string'
+            'catatan' => 'required|string'
         ]);
 
         Bimbingan::create([
