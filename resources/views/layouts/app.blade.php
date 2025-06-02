@@ -15,11 +15,11 @@
     </style>
 </head>
 
-<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen">
+<body class="bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 min-h-screen">
     <x-navbar />
 
     <div class="flex min-h-screen pt-16">
-        <div class="w-72 fixed left-0 top-16 h-full backdrop-blur-xl bg-white/5 border-r border-white/10 shadow-2xl z-40"
+        <div class="w-72 fixed left-0 top-16 h-full backdrop-blur-xl bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-white/10 dark:shadow-2xl z-40"
             x-data="{ collapsed: false }">
 
             <!-- Sidebar Content -->
@@ -37,7 +37,7 @@
         <!-- Main Content Area -->
         <main class="flex-1 ml-72 p-6 transition-all duration-300">
             <div
-                class="mt-4 backdrop-blur-xl bg-white/5 rounded-xl border border-white/10 shadow-2xl min-h-[calc(100vh-8rem)] p-8">
+                class="mt-4 backdrop-blur-xl bg-white dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 dark:shadow-2xl min-h-[calc(100vh-8rem)] p-8">
                 {{ $slot }}
             </div>
         </main>

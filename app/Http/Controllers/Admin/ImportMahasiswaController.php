@@ -16,7 +16,12 @@ class ImportMahasiswaController extends Controller
 
     public function store(ImportMahasiswaRequest $request)
     {
-        Excel::import(new MahasiswaImport, $request->file('file'));
+        $import = new MahasiswaImport;
+        Excel::import($import, $request->file('file'));
+
+        if (!empty($import->errors)) {
+            return redirect()->back()->withErrors(['import' => $import->errors])->withInput();
+        }
 
         return redirect()->route('admin.mahasiswa.index')->with('success', 'Mahasiswa berhasil ditambahkan.');
     }

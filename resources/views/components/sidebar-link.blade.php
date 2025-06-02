@@ -4,10 +4,11 @@
 $isActive = request()->routeIs($route);
 @endphp
 
-<a href="{{ route($route) }}" class="group relative flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-all duration-200 mb-2
+<a href="{{ route($route) }}"
+    class="group relative flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-all duration-200 mb-2 text-black dark:text-white
    {{ $isActive
-    ? 'bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-white border border-blue-500/30 shadow-lg'
-    : 'text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 border border-transparent' }}">
+    ? 'bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 shadow-lg'
+    : 'hover:bg-gray-100 dark:hover:bg-white/10 hover:border-gray-200 dark:hover:border-white/20 border border-transparent' }}">
 
     <!-- Active Indikator -->
     @if($isActive)
