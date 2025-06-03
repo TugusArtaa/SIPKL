@@ -13,8 +13,7 @@
             </svg>
         </div>
         <h2 class="text-2xl font-bold text-white-900 mb-2">Selamat Datang di SIPTI</h2>
-        <p class="text-white-600 text-sm">Sistem Informasi Praktik Kerja Lapangan Teknologi Informasi "Satu Sistem,
-            Banyak Kemudahan"</p>
+        <p class="text-white-600 text-sm">Sistem Informasi Praktik Kerja Lapangan Teknologi Informasi</p>
     </div>
 
     <form method="POST" action="{{ route('login') }}" class="space-y-6">
