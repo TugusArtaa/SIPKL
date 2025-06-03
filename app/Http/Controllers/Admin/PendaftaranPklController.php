@@ -8,9 +8,28 @@ use Illuminate\Http\Request;
 
 class PendaftaranPklController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $pendaftaran = PendaftaranPkl::with('mahasiswa.user', 'perusahaan')->latest()->paginate(8);
+        $query = PendaftaranPkl::with('mahasiswa.user', 'perusahaan');
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->whereHas('mahasiswa', function ($q) use ($search) {
+                $q->where('nama', 'like', "%$search%")
+                    ->orWhere('nim', 'like', "%$search%")
+                    ->orWhere('program_studi', 'like', "%$search%")
+                    ->orWhere('kelas', 'like', "%$search%")
+                    ->orWhere('semester', 'like', "%$search%")
+                ;
+            })
+                ->orWhereHas('perusahaan', function ($q) use ($search) {
+                    $q->where('nama', 'like', "%$search%")
+                    ;
+                })
+                ->orWhere('bidang_pkl', 'like', "%$search%")
+                ->orWhere('status', 'like', "%$search%")
+            ;
+        }
+        $pendaftaran = $query->latest()->paginate(8)->appends($request->only('search'));
         return view('admin.pendaftaran.index', compact('pendaftaran'));
     }
 

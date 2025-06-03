@@ -27,6 +27,30 @@
     </div>
     @endif
 
+    {{-- Area Tombol & Search --}}
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <form method="GET" action="{{ route('admin.pendaftaran.index') }}" class="flex items-center gap-3 h-[48px]">
+            <input type="text" name="search" value="{{ request('search') }}"
+                placeholder="Cari Nama, NIM, Perusahaan, Bidang, Status..."
+                class="h-[48px] px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm w-96 dark:bg-slate-800 dark:text-white transition-all duration-200 shadow-sm"
+                autocomplete="off">
+            <button type="submit"
+                class="h-[48px] w-[48px] flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-semibold transition-all duration-200"
+                aria-label="Cari">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+            @if(request('search'))
+            <a href="{{ route('admin.pendaftaran.index') }}"
+                class="h-[48px] flex items-center ml-2 text-sm text-gray-500 dark:text-slate-300 underline">Reset</a>
+            @endif
+        </form>
+    </div>
+    {{-- End Area Tombol & Search --}}
+
     {{-- Tabel --}}
     <div class="overflow-hidden rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5">
         <div class="overflow-x-auto">

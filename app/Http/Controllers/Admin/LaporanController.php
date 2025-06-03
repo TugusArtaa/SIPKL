@@ -11,9 +11,22 @@ class LaporanController extends Controller
     /**
      * Tampilkan daftar laporan PKL mahasiswa.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $laporan = LaporanPkl::with(['mahasiswa.user'])->latest()->paginate(8);
+        $query = LaporanPkl::with(['mahasiswa.user']);
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->whereHas('mahasiswa', function ($q2) use ($search) {
+                    $q2->where('nama', 'like', "%$search%")
+                        ->orWhere('nim', 'like', "%$search%")
+                    ;
+                })
+                    ->orWhere('status', 'like', "%$search%")
+                ;
+            });
+        }
+        $laporan = $query->latest()->paginate(8)->appends($request->only('search'));
 
         return view('admin.laporan.index', compact('laporan'));
     }
