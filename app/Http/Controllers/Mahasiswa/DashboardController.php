@@ -13,9 +13,17 @@ class DashboardController extends Controller
         return view('mahasiswa.dashboard');
     }
 
-    public function perusahaan()
+    public function perusahaan(Request $request)
     {
-        $perusahaan = Perusahaan::paginate(10);
+        $query = Perusahaan::query();
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where('nama', 'like', "%$search%")
+                ->orWhere('alamat', 'like', "%$search%")
+                ->orWhere('no_hp', 'like', "%$search%")
+            ;
+        }
+        $perusahaan = $query->paginate(10)->appends($request->only('search'));
         return view('mahasiswa.perusahaan.index', compact('perusahaan'));
     }
 }
