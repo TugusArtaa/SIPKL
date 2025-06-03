@@ -73,6 +73,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/mahasiswa/import', [ImportMahasiswaController::class, 'create'])->name('mahasiswa.import.form');
     Route::post('/mahasiswa/import', [ImportMahasiswaController::class, 'store'])->name('mahasiswa.import');
     Route::delete('/mahasiswa/{id}', [AdminMahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+    Route::get('/mahasiswa/{mahasiswa}/edit', [AdminMahasiswaController::class, 'edit'])->name('mahasiswa.edit');
+    Route::put('/mahasiswa/{mahasiswa}', [AdminMahasiswaController::class, 'update'])->name('mahasiswa.update');
 
     // CRUD Dosen (tambah manual & import)
     Route::get('/dosen', [AdminDosenController::class, 'index'])->name('dosen.index');
@@ -81,6 +83,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/dosen/import', [ImportDosenController::class, 'create'])->name('dosen.import.form');
     Route::post('/dosen/import', [ImportDosenController::class, 'store'])->name('dosen.import');
     Route::delete('/dosen/{id}', [AdminDosenController::class, 'destroy'])->name('dosen.destroy');
+    Route::get('/dosen/{dosen}/edit', [AdminDosenController::class, 'edit'])->name('dosen.edit');
+    Route::put('/dosen/{dosen}', [AdminDosenController::class, 'update'])->name('dosen.update');
 
     // CRUD Perusahaan (tanpa show)
     Route::resource('perusahaan', PerusahaanController::class)->except('show');

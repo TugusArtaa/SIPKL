@@ -8,9 +8,19 @@ use Illuminate\Http\Request;
 
 class PerusahaanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $perusahaan = Perusahaan::latest()->paginate(8);
+        $query = Perusahaan::query();
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'like', "%$search%")
+                    ->orWhere('alamat', 'like', "%$search%")
+                    ->orWhere('no_hp', 'like', "%$search%")
+                ;
+            });
+        }
+        $perusahaan = $query->latest()->paginate(8)->appends($request->only('search'));
         return view('admin.perusahaan.index', compact('perusahaan'));
     }
 

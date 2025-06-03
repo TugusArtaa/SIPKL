@@ -13,9 +13,19 @@ class AdminDosenController extends Controller
     /**
      * Tampilkan semua dosen.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $dosen = Dosen::with('user')->latest()->paginate(8);
+        $query = Dosen::with('user');
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'like', "%$search%")
+                    ->orWhere('nip', 'like', "%$search%")
+                    ->orWhere('program_studi', 'like', "%$search%")
+                ;
+            });
+        }
+        $dosen = $query->latest()->paginate(8)->appends($request->only('search'));
 
         return view('admin.dosen.index', compact('dosen'));
     }
@@ -57,6 +67,38 @@ class AdminDosenController extends Controller
         ]);
 
         return redirect()->route('admin.dosen.index')->with('success', 'Dosen berhasil ditambahkan.');
+    }
+
+    /**
+     * Tampilkan form edit dosen.
+     */
+    public function edit($id)
+    {
+        $dosen = Dosen::findOrFail($id);
+        return view('admin.dosen.edit', compact('dosen'));
+    }
+
+    /**
+     * Update data dosen.
+     */
+    public function update(Request $request, $id)
+    {
+        $dosen = Dosen::findOrFail($id);
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'nip' => 'required|string|unique:dosen,nip,' . $dosen->id,
+            'program_studi' => 'required|string|max:255',
+        ]);
+        $dosen->update([
+            'nama' => $request->nama,
+            'nip' => $request->nip,
+            'program_studi' => $request->program_studi,
+        ]);
+        // Jika ingin update nama user juga
+        if ($dosen->user_id) {
+            $dosen->user->update(['name' => $request->nama]);
+        }
+        return redirect()->route('admin.dosen.index')->with('success', 'Data dosen berhasil diperbarui.');
     }
 
     /**

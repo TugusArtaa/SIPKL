@@ -13,9 +13,21 @@ class AdminMahasiswaController extends Controller
     /**
      * Tampilkan daftar semua mahasiswa.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $mahasiswa = Mahasiswa::with('user')->latest()->paginate(8);
+        $query = Mahasiswa::with('user');
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'like', "%$search%")
+                    ->orWhere('nim', 'like', "%$search%")
+                    ->orWhere('program_studi', 'like', "%$search%")
+                    ->orWhere('kelas', 'like', "%$search%")
+                    ->orWhere('semester', 'like', "%$search%")
+                ;
+            });
+        }
+        $mahasiswa = $query->latest()->paginate(8)->appends($request->only('search'));
 
         return view('admin.mahasiswa.index', compact('mahasiswa'));
     }
@@ -61,6 +73,32 @@ class AdminMahasiswaController extends Controller
         ]);
 
         return redirect()->route('admin.mahasiswa.index')->with('success', 'Mahasiswa berhasil ditambahkan.');
+    }
+
+    /**
+     * Tampilkan form edit mahasiswa.
+     */
+    public function edit(Mahasiswa $mahasiswa)
+    {
+        return view('admin.mahasiswa.edit', compact('mahasiswa'));
+    }
+
+    /**
+     * Perbarui data mahasiswa.
+     */
+    public function update(Request $request, Mahasiswa $mahasiswa)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'nim' => 'required|string|unique:mahasiswa,nim,' . $mahasiswa->id,
+            'program_studi' => 'required|string',
+            'kelas' => 'required|string',
+            'semester' => 'required|integer|min:1',
+        ]);
+
+        $mahasiswa->update($request->only(['nama', 'nim', 'program_studi', 'kelas', 'semester']));
+
+        return redirect()->route('admin.mahasiswa.index')->with('success', 'Mahasiswa berhasil diperbarui.');
     }
 
     public function destroy($id)
