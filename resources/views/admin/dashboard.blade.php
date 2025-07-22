@@ -9,7 +9,7 @@
                 </h1>
                 <p class="text-gray-900 dark:text-blue-100 text-sm">Di dashboard admin untuk memantau dan mengelola
                     seluruh data Sistem
-                    Informasi PKL Teknologi Informasi.
+                    Informasi PKL.
                 </p>
             </div>
         </div>
@@ -240,7 +240,7 @@
                 class="col-span-2 bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 rounded-2xl p-6 flex items-center justify-between">
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Ringkasan Sistem</h3>
-                    <p class="text-gray-700 dark:text-slate-300 text-sm">Sistem SIPTI berjalan normal dengan
+                    <p class="text-gray-700 dark:text-slate-300 text-sm">Sistem SIPKL berjalan normal dengan
                         {{ $totalMahasiswa + $totalDosen }} pengguna aktif
                     </p>
                 </div>

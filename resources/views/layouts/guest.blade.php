@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SIPTI - Sistem Informasi PKL TI') }}</title>
+    <title>{{ config('app.name', 'SIPKL - Sistem Informasi PKL') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -27,8 +27,8 @@
         <!-- Version Info -->
         <div class="text-center mt-6">
             <p class="text-white/70 text-xs drop-shadow-sm">
-                SIPTI v1.0 &mdash; Crafted with Laravel & Tailwind CSS by <span
-                    class="font-semibold">@KomangSuryana</span>
+                SIPKL v1.0 &mdash; Crafted with Laravel & Tailwind CSS by <span class="font-semibold">@I Putu Agus
+                    Seniartawan</span>
             </p>
         </div>
     </div>

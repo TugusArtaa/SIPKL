@@ -1,6 +1,6 @@
-# 🎓 SIPTI - Sistem Informasi PKL TI
+# 🎓 SIPKL (Sistem Informasi Praktik Kerja Lapangan)
 
-**SIPTI** adalah aplikasi web berbasis Laravel untuk mempermudah pengelolaan proses **Praktik Kerja Lapangan (PKL)** di lingkungan **Jurusan Teknologi Informasi**. Sistem ini menyediakan fitur lengkap mulai dari pendaftaran PKL, pengajuan bimbingan, unggah laporan, hingga penilaian akhir oleh dosen pembimbing.
+**SIPKL** adalah aplikasi web berbasis Laravel untuk mempermudah pengelolaan proses **Praktik Kerja Lapangan (PKL)** di lingkungan **Jurusan Kampus**. Sistem ini menyediakan fitur lengkap mulai dari pendaftaran PKL, pengajuan bimbingan, unggah laporan, hingga penilaian akhir oleh dosen pembimbing.
 
 ## 📌 Fitur Utama
 
@@ -37,8 +37,8 @@
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/TugusArtaa/SIPTI.git
-cd SIPTI
+git clone https://github.com/TugusArtaa/SIPKL.git
+cd SIPKL
 ```
 
 ### 2. Install Dependency via Composer
@@ -68,11 +68,11 @@ php artisan key:generate
 
 ### 6. Setup Database
 
--   Buat database baru di MySQL: sipti_db
+-   Buat database baru di MySQL: sipkl_db
 -   Sesuaikan konfigurasi .env:
 
 ```bash
-DB_DATABASE=sipti_db
+DB_DATABASE=sipkl_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```

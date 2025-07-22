@@ -6,8 +6,7 @@
             <div>
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Kelola Data Dosen</h1>
                 <p class="text-gray-900 dark:text-blue-100 text-sm">Lihat, tambah, dan kelola data dosen pada Sistem
-                    Informasi PKL
-                    Teknologi Informasi.</p>
+                    Informasi PKL.</p>
             </div>
         </div>
         <div class="mt-4">

@@ -12,8 +12,8 @@
                 </path>
             </svg>
         </div>
-        <h2 class="text-2xl font-bold text-white-900 mb-2">Selamat Datang di SIPTI</h2>
-        <p class="text-white-600 text-sm">Sistem Informasi Praktik Kerja Lapangan Teknologi Informasi</p>
+        <h2 class="text-2xl font-bold text-white-900 mb-2">Selamat Datang di SIPKL</h2>
+        <p class="text-white-600 text-sm">Sistem Informasi Praktik Kerja Lapangan</p>
     </div>
 
     <form method="POST" action="{{ route('login') }}" class="space-y-6">
@@ -91,7 +91,7 @@
     <div class="mt-6 text-center">
         <p class="text-sm text-white-600">
             Belum punya akun?
-            <a href="https://wa.me/6285895859312?text=Halo%20Admin%2C%20saya%20belum%20memiliki%20akun%20SIPTI.%20Mohon%20dibantu%20untuk%20pendaftaran%20akun%20baru%20dengan%20data%20berikut%3A%0ANama%3A%20%0ANIM%3A%20%0AProgram%20Studi%3A%20%0AKelas%3A%20%0ASemester%3A%20"
+            <a href="https://wa.me/6285895859312?text=Halo%20Admin%2C%20saya%20belum%20memiliki%20akun%20SIPKL.%20Mohon%20dibantu%20untuk%20pendaftaran%20akun%20baru%20dengan%20data%20berikut%3A%0ANama%3A%20%0ANIM%3A%20%0AProgram%20Studi%3A%20%0AKelas%3A%20%0ASemester%3A%20"
                 target="_blank" rel="noopener noreferrer"
                 class="font-medium text-cyan-400 hover:text-cyan-200 transition-colors">
                 Hubungi Administrator

@@ -15,7 +15,7 @@
                                 class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">{{ Auth::user()->mahasiswa->nama ?? Auth::user()->name }}!</span>
                         </h1>
                         <p class="text-gray-500 dark:text-slate-300 text-lg">
-                            di Sistem Informasi Praktik Kerja Lapangan - Jurusan Teknologi Informasi
+                            di Sistem Informasi Praktik Kerja Lapangan
                         </p>
                         <div class="mt-4 flex items-center space-x-4 text-sm">
                             <div class="flex items-center text-gray-500 dark:text-slate-300">
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-        {{-- Hero Section SIPTI --}}
+        {{-- Hero Section SIPKL --}}
         <div class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 rounded-xl p-8 mb-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {{-- Left Side - Images --}}
@@ -59,7 +59,7 @@
                                 class="absolute dark:-inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-400/20 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300">
                             </div>
                             <div class="relative">
-                                <img src="/Mascot.png" alt="SIPTI Mascot"
+                                <img src="/Mascot.png" alt="SIPKL Mascot"
                                     class="w-[320px] h-[320px] object-contain dark:drop-shadow-2xl transition-transform duration-300 group-hover:scale-105 mx-auto">
                             </div>
                         </div>
@@ -70,14 +70,13 @@
                     <div class="text-center lg:text-left">
                         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                             Apa itu <span
-                                class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">SIPTI?</span>
+                                class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">SIPKL?</span>
                         </h2>
                     </div>
                     <div class="space-y-6">
                         <p class="text-gray-500 dark:text-slate-300 text-lg leading-relaxed text-center lg:text-left">
-                            <span class="text-cyan-500 dark:text-cyan-400 font-semibold">Sistem Informasi Praktik Kerja
-                                Lapangan</span>
-                            <span class="text-gray-900 dark:text-white">Jurusan Teknologi Informasi</span> adalah
+                            <span class="text-cyan-500 dark:text-cyan-400 font-semibold">Sistem Informasi</span>
+                            <span class="text-gray-900 dark:text-white">Praktik Kerja Lapangan</span> adalah
                             platform digital yang memfasilitasi mahasiswa dalam mengelola seluruh proses PKL dengan
                             mudah dengan fitur Pendaftaran Online, Pengajuan Bimbingan Online, dan Pelaporan Digital.
                             <br><br>Selanjutnya, Anda dapat melihat ringkasan informasi PKL pada bagian di bawah ini.

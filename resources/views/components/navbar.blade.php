@@ -14,7 +14,7 @@
                 <div>
                     <h2
                         class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-                        SIPTI
+                        SIPKL
                     </h2>
                     <p class="text-xs text-gray-500 dark:text-gray-400 -mt-1">Sistem Informasi PKL TI</p>
                 </div>
