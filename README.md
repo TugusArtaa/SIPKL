@@ -46,7 +46,7 @@
 
 <table>
   <tr>
-    <td><img src="public/screenshots/Login.png" alt="Login" width="220" /></td>
+    <td><img src="public/screenshots/Login-page.png" alt="Login" width="220" /></td>
   </tr>
 </table>
 
