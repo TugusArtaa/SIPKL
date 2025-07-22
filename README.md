@@ -42,41 +42,69 @@
 
 ## Tampilan User Interface
 
+### 🔑 Login
+
 <table>
   <tr>
-    <td><img src="public/screenshots/login.png" alt="Login" width="220" /></td>
-    <td><img src="public/screenshots/dashboard_admin.png" alt="Dashboard Admin" width="220" /></td>
+    <td><img src="public/screenshots/Login.png" alt="Login" width="220" /></td>
+  </tr>
+</table>
+
+### 🎛️ Admin
+
+<table>
+  <tr>
+    <td><img src="public/screenshots/Admin-1.png" alt="Admin 1" width="220" /></td>
+    <td><img src="public/screenshots/Admin-2.png" alt="Admin 2" width="220" /></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/admin_mahasiswa.png" alt="Admin Mahasiswa" width="220" /></td>
-    <td><img src="public/screenshots/admin_dosen.png" alt="Admin Dosen" width="220" /></td>
+    <td><img src="public/screenshots/Admin-3.png" alt="Admin 3" width="220" /></td>
+    <td><img src="public/screenshots/Admin-4.png" alt="Admin 4" width="220" /></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/admin_perusahaan.png" alt="Admin Perusahaan" width="220" /></td>
-    <td><img src="public/screenshots/admin_verifikasi.png" alt="Admin Verifikasi" width="220" /></td>
+    <td><img src="public/screenshots/Admin-5.png" alt="Admin 5" width="220" /></td>
+    <td><img src="public/screenshots/Admin-6.png" alt="Admin 6" width="220" /></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/admin_upload_format.png" alt="Admin Upload Format" width="220" /></td>
-    <td><img src="public/screenshots/home_mahasiswa.png" alt="Home Mahasiswa" width="220" /></td>
+    <td><img src="public/screenshots/Admin-7.png" alt="Admin 7" width="220" /></td>
+    <td><img src="public/screenshots/Admin-8.png" alt="Admin 8" width="220" /></td>
+  </tr>
+</table>
+
+### 🎓 Mahasiswa
+
+<table>
+  <tr>
+    <td><img src="public/screenshots/Mahasiswa-1.png" alt="Mahasiswa 1" width="220" /></td>
+    <td><img src="public/screenshots/Mahasiswa-2.png" alt="Mahasiswa 2" width="220" /></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/mahasiswa_pendaftaran.png" alt="Mahasiswa Pendaftaran" width="220" /></td>
-    <td><img src="public/screenshots/mahasiswa_perusahaan.png" alt="Mahasiswa Perusahaan" width="220" /></td>
+    <td><img src="public/screenshots/Mahasiswa-3.png" alt="Mahasiswa 3" width="220" /></td>
+    <td><img src="public/screenshots/Mahasiswa-4.png" alt="Mahasiswa 4" width="220" /></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/mahasiswa_bimbingan.png" alt="Mahasiswa Bimbingan" width="220" /></td>
-    <td><img src="public/screenshots/mahasiswa_upload_laporan.png" alt="Mahasiswa Upload Laporan" width="220" /></td>
+    <td><img src="public/screenshots/Mahasiswa-5.png" alt="Mahasiswa 5" width="220" /></td>
+    <td><img src="public/screenshots/Mahasiswa-6.png" alt="Mahasiswa 6" width="220" /></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/mahasiswa_unduh_format.png" alt="Mahasiswa Unduh Format" width="220" /></td>
-    <td><img src="public/screenshots/home_dosen.png" alt="Home Dosen" width="220" /></td>
+    <td><img src="public/screenshots/Mahasiswa-7.png" alt="Mahasiswa 7" width="220" /></td>
+    <td></td>
+  </tr>
+</table>
+
+### 🧑‍🏫 Dosen
+
+<table>
+  <tr>
+    <td><img src="public/screenshots/Dosen-1.png" alt="Dosen 1" width="220" /></td>
+    <td><img src="public/screenshots/Dosen-2.png" alt="Dosen 2" width="220" /></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/dosen_mahasiswa_bimbingan.png" alt="Dosen Mahasiswa Bimbingan" width="220" /></td>
-    <td><img src="public/screenshots/dosen_konfirmasi_jadwal.png" alt="Dosen Konfirmasi Jadwal" width="220" /></td>
+    <td><img src="public/screenshots/Dosen-3.png" alt="Dosen 3" width="220" /></td>
+    <td><img src="public/screenshots/Dosen-4.png" alt="Dosen 4" width="220" /></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/dosen_input_nilai.png" alt="Dosen Input Nilai" width="220" /></td>
+    <td><img src="public/screenshots/Dosen-5.png" alt="Dosen 5" width="220" /></td>
     <td></td>
   </tr>
 </table>
