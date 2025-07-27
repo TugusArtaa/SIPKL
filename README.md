@@ -2,6 +2,8 @@
 
 **SIPKL** adalah aplikasi web berbasis Laravel untuk mempermudah pengelolaan proses **Praktik Kerja Lapangan (PKL)** di lingkungan **Jurusan Kampus**. Sistem ini menyediakan fitur lengkap mulai dari pendaftaran PKL, pengajuan bimbingan, unggah laporan, hingga penilaian akhir oleh dosen pembimbing.
 
+> Dibuat sebagai proyek pribadi.
+
 ## 📌 Fitur Utama
 
 ### 🔐 Otentikasi Role
